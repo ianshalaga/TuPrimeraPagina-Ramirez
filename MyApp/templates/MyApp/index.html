@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fuente Orbitron para títulos gamer -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>{{ title|default:"Seyfer Studios" }}</title>
+    <style>
+      .font-orbitron {
+        font-family: "Orbitron", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 text-white font-sans flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-red-600 to-green-500 p-4 shadow-md">
+      <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-3xl font-orbitron font-extrabold">🎮 Seyfer Studios</h1>
+        <nav class="space-x-4">
+          <a href="{% url 'myapp:index' %}" class="hover:text-red-300"
+            >Inicio</a
+          >
+          <a href="{% url 'music:song' %}" class="hover:text-green-300"
+            >Música</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="flex-grow container mx-auto py-10 px-4">
+      {% block content %} {% endblock %}
+    </main>
+
+    <!-- Footer fijo al fondo -->
+    <footer class="bg-gray-800 text-center text-sm text-gray-400 py-4">
+      &copy; {{ now|date:"Y" }} Seyfer Studios. Todos los derechos reservados.
+    </footer>
+  </body>
+</html>
