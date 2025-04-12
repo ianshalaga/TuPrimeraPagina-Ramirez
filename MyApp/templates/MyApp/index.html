@@ -5,38 +5,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Fuente Orbitron para títulos gamer -->
+    <!-- Fuente Rajdhani -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&display=swap"
       rel="stylesheet"
     />
 
     <title>{{ title|default:"Seyfer Studios" }}</title>
     <style>
-      .font-orbitron {
-        font-family: "Orbitron", sans-serif;
+      .font-rajdhani {
+        font-family: "Rajdhani", sans-serif;
       }
     </style>
   </head>
   <body class="bg-gray-900 text-white font-sans flex flex-col min-h-screen">
     <!-- Header -->
     <header class="bg-gradient-to-r from-red-600 to-green-500 p-4 shadow-md">
-      <div class="container mx-auto flex justify-between items-center">
-        <h1 class="text-3xl font-orbitron font-extrabold">🎮 Seyfer Studios</h1>
-        <nav class="space-x-4">
-          <a href="{% url 'myapp:index' %}" class="hover:text-red-300"
-            >Inicio</a
+      <div class="container mx-auto flex items-center space-x-8">
+        <h1
+          class="text-3xl font-rajdhani font-bold text-lime-300 tracking-wide"
+        >
+          🎮 Seyfer Studios
+        </h1>
+        <nav class="flex space-x-4">
+          <a
+            href="{% url 'myapp:index' %}"
+            class="font-semibold text-white px-3 py-1 rounded-lg hover:bg-red-700/70 hover:text-white transition"
           >
-          <a href="{% url 'music:song' %}" class="hover:text-green-300"
-            >Música</a
+            Inicio
+          </a>
+          <span
+            class="font-semibold text-gray-400 px-3 py-1 rounded-lg bg-gray-700/50 cursor-not-allowed"
+            title="Próximamente disponible"
           >
+            Juegos
+          </span>
+          <a
+            href="{% url 'music:song' %}"
+            class="font-semibold text-white px-3 py-1 rounded-lg hover:bg-green-700/70 hover:text-white transition"
+          >
+            Música
+          </a>
         </nav>
       </div>
     </header>
 
     <!-- Contenido principal -->
     <main class="flex-grow container mx-auto py-10 px-4">
-      {% block content %} {% endblock %}
+      {% block content %}
+      <section class="text-center space-y-6">
+        <h2
+          class="text-4xl font-rajdhani font-bold text-lime-400 drop-shadow-md"
+        >
+          ¡Bienvenido a Seyfer Studios!
+        </h2>
+        <p class="text-lg max-w-3xl mx-auto text-gray-300">
+          Una plataforma creada por y para gamers. Enfocada en ofrecer contenido
+          exclusivo y apasionado sobre videojuegos clásicos y competitivos.
+        </p>
+        <div class="grid md:grid-cols-3 gap-6 mt-8">
+          <div
+            class="bg-gray-800 rounded-xl p-6 shadow-lg border border-red-500/30 hover:border-red-500 transition"
+          >
+            <h3 class="text-xl font-bold text-red-400 mb-2">
+              Dark Souls & From Software
+            </h3>
+            <p class="text-gray-300">
+              Sumérgete en los mundos oscuros, difíciles y misteriosos de From
+              Software. Opiniones, builds y lore de Dark Souls y similares.
+            </p>
+          </div>
+          <div
+            class="bg-gray-800 rounded-xl p-6 shadow-lg border border-green-500/30 hover:border-green-500 transition"
+          >
+            <h3 class="text-xl font-bold text-green-400 mb-2">SoulCalibur</h3>
+            <p class="text-gray-300">
+              Estrategias, historia y personajes de la saga SoulCalibur. Un
+              homenaje a la mejor saga de lucha con armas.
+            </p>
+          </div>
+          <div
+            class="bg-gray-800 rounded-xl p-6 shadow-lg border border-lime-400/30 hover:border-lime-400 transition"
+          >
+            <h3 class="text-xl font-bold text-lime-400 mb-2">SimRacing</h3>
+            <p class="text-gray-300">
+              Desde las pistas de Gran Turismo hasta la simulación realista de
+              Assetto Corsa. Comparativas, mods y comunidad.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-10">
+          <h3 class="text-2xl font-bold text-pink-400">
+            🎵 Música Épica de Videojuegos
+          </h3>
+          <p class="text-gray-300 max-w-xl mx-auto mt-2">
+            Disfruta de las mejores piezas musicales de SoulCalibur.
+            Próximamente se añadirán más bandas sonoras legendarias.
+          </p>
+        </div>
+      </section>
+      {% endblock %}
     </main>
 
     <!-- Footer fijo al fondo -->
