@@ -1,0 +1,81 @@
+@startuml soulcalibur_music
+
+' CLASSES
+
+class Game {
+    - name: GameNameEnum
+    - game_number: Number
+}
+
+class Album {
+    - name: String
+    - type: AlbumTypeEnum
+    - album_number: Number
+}
+
+class Song {
+    - song_number: Number
+    - name: String
+    - other_name: String
+    - duration: String
+    - variation_type: VariationTypeEnum
+    - original_song: Song
+}
+
+class Situation {
+    - description: String
+}
+
+class GameMode {
+    name: String
+}
+
+class Stage {
+    - name: String
+    - other_name: String
+}
+
+class Character {
+    - name: String
+}
+
+' RELATIONSHIP
+
+Game "1" -- "1..*" Album : Have >
+Album "1..*" -- "1..*" Song : Have >
+Song "0..*" -- "1" Song : Is variation of >
+Song "1" -- "0..*" Situation : Have >
+Situation "1" -- "0..1" Character : May involve >
+Situation "1" -- "0..1" Stage : May involve >
+Situation "1" -- "0..1" GameMode : May involve >
+Character "0..*" -- "1..*" Stage : Belongs >
+
+' ENUMS
+
+enum GameNameEnum {
+    SE = "Soul Edge"
+    SB = "Soul Blade"
+    SC = "Soulcalibur"
+    SCII = "Soulcalbur II"
+    SCIII = "Soulcalibur III"
+    SCL = "Soulcalibur Legends"
+    SCIV = "Soulcalibur IV"
+    SCBD = "Soulcalibur: Broken Destiny"
+    SCV = "Soulcalibur V"
+    SCVI = "Soulcalibur VI"
+}
+
+enum VariationTypeEnum {
+    ORI = "Original"
+    ARR = "Arranged"
+    EXT = "Extended"
+    SHORT = "Shortened"
+    FRAG = "Fragment"
+}
+
+enum AlbumTypeEnum {
+    OST = "Original Soundtrack"
+    GR = "Gamerip"
+}
+
+@enduml
