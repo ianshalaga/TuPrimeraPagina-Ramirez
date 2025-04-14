@@ -13,8 +13,11 @@ class Album {
     - album_number: Number
 }
 
-class Song {
+class AlbumSong {
     - song_number: Number
+}
+
+class Song {
     - name: String
     - other_name: String
     - duration: String
@@ -42,7 +45,8 @@ class Character {
 ' RELATIONSHIP
 
 Game "1" -- "1..*" Album : Have >
-Album "1..*" -- "1..*" Song : Have >
+Album "1" -- "1..*" AlbumSong : Contain >
+Song "1" -- "1..*" AlbumSong : Appear in >
 Song "0..*" -- "1" Song : Is variation of >
 Song "1" -- "0..*" Situation : Have >
 Situation "1" -- "0..1" Character : May involve >

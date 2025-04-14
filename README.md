@@ -14,23 +14,51 @@ Desarrollar tu primer sitio web en **Django** utilizando patrón **MVT**.
 
 ## Requisitos
 
-- Link de **GitHub** con el proyecto totalmente subido a la plataforma.
-
+- [x] Link de **GitHub** con el proyecto totalmente subido a la plataforma.
 - Proyecto web **Django** con patrón **MVT** que incluya:
-  - Herencia de **HTML**.
-  - Por lo menos 3 clases en **models**.
-  - Un formulario para insertar datos a cada **model** creado.
-  - Un formulario para buscar algo en la **DB**.
-  - Readme que indique el orden en el que se prueban las cosas y/o donde están las funcionalidades.
+  - [x] Herencia de **HTML**.
+  - [x] Por lo menos 3 clases en **models**.
+  - [x] Un formulario para insertar datos a cada **model** creado.
+  - [x] Un formulario para buscar algo en la **DB**.
+  - [x] README que indique el orden en el que se prueban las cosas y/o donde están las funcionalidades.
 
 ## Formato
 
 Link al repositorio de **GitHub** con el nombre “TuPrimeraPagina+Apellido” por ejemplo “TuPrimeraPagina+Fernandez”.
 
-## Módulos (internos)
-
-...
+<!-- ## Módulos (internos) -->
 
 ## Paquetes (exteros)
 
 - [Django](https://www.djangoproject.com/): es un framework web de alto nivel para Python, diseñado para desarrollar sitios web de forma rápida, segura y con buenas prácticas desde el inicio.
+
+## Utilización
+
+- Clone [este repositorio](https://github.com/ianshalaga/TuPrimeraPagina-Ramirez.git) en su ordenador:
+
+> `git clone https://github.com/ianshalaga/TuPrimeraPagina-Ramirez.git`
+
+- Posiciónese en el directorio del proyecto y cree un entorno virtual:
+
+> `python -m venv .venv`
+
+- Active el entorno virtual:
+
+> `.venv\Scripts\activate`
+
+- Instale los paquetes necesarios:
+
+> `pip install -r requirements.txt`
+
+## Descripción
+
+Las rutas del proyecto son:
+
+- Página principal: `dominio/`
+- Administración: `dominio/admin/`
+- Pestaña **Música**: `dominio/music/song` (formulario de búsqueda `GET`)
+- Agregar nueva canción: `dominio/music/song-create` (formulario de creación `POST`)
+
+Se puede consultar el archivo `sc_ost.plantuml` para corroborar el diagrama de clases de los modelos de la aplicación `Music`.
+
+Se incluye la pequeña base de datos en el respositorio para que se vizualicen algunos ejemplos de canciones cargadas.
