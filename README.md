@@ -28,7 +28,7 @@ Link al repositorio de **GitHub** con el nombre “TuPrimeraPagina+Apellido” p
 
 <!-- ## Módulos (internos) -->
 
-## Paquetes (exteros)
+## Paquetes (externos)
 
 - [Django](https://www.djangoproject.com/): es un framework web de alto nivel para Python, diseñado para desarrollar sitios web de forma rápida, segura y con buenas prácticas desde el inicio.
 
